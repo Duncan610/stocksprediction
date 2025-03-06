@@ -1,0 +1,13 @@
+pandas
+numpy
+seaborn
+matplotlib
+scikit-learn
+requests
+pyarrow
+lightgbm
+tensorflow
+statsmodels
+xgboost
+python-dotenv
+-e .
