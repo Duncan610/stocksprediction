@@ -8,7 +8,7 @@ from src.utils.logger import logger
 from src.utils.exception import DataIngestionError, DataTransformationError, CustomException
 from src.config.config import API_KEY, DATA_DIR
 
-# Loading environment variables from .env file
+# Load environment variables from .env file
 load_dotenv()
 
 SYMBOL = "IBM"
@@ -28,6 +28,7 @@ def main():
 
         # Preprocessing
         logger.info("Starting data preprocessing process.")
+        os.makedirs(PROCESSED_DIR, exist_ok=True)
         transformer = DataTransformation()
         processed_filepath = transformer.transform_and_save(
             input_path=raw_filepath,
@@ -38,7 +39,7 @@ def main():
         # Load processed data
         df = pd.read_parquet(processed_filepath)
         
-        # Feature selection (adjust based on EDA)
+        # Feature selection
         X = df[['Open', 'High', 'Low', 'Volume']]
         y = df['Close']
         
@@ -47,8 +48,11 @@ def main():
         X_train, X_test = X[:train_size], X[train_size:]
         y_train, y_test = y[:train_size], y[train_size:]
 
+        # Ensure models directory exists
+        os.makedirs(MODEL_DIR, exist_ok=True)
+
         # Train and compare models
-        model_types = ["lightgbm", "lstm", "random_forest", "xgboost", "arima"]
+        model_types = ["lightgbm", "random_forest", "xgboost", "arima"]
         results = {}
         
         for model_type in model_types:
