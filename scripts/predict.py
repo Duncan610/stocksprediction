@@ -12,7 +12,7 @@ def load_model(model_path):
 
 def predict_future(model, X_recent, days=5):
     predictions = []
-    current_input = X_recent[-1:].copy()
+    current_input = X_recent[-1:].copy().astype(float)
     for _ in range(days):
         pred = model.predict(current_input)
         predictions.append(pred[0])
