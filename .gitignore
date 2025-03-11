@@ -50,14 +50,13 @@ venv.bak/
 .ipynb_checkpoints/
 
 # Project-specific data and models
-data/raw/
-data/processed/
-data/models/
+data/           # Covers raw/, processed/, models/
+*.parquet       # Catches stray parquet files
+*.pkl           # Catches stray pickle files
+structure.txt   # Ignores your tree output file
 
 # Logs and temporary files
 *.log
-*.parquet  # Optional: catches stray parquet files
-*.pkl      # Optional: catches stray pickle files
 
 # IDE-specific (optional, uncomment if you use these)
 #.idea/     # PyCharm
