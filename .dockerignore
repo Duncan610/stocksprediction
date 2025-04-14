@@ -1,0 +1,5 @@
+data/
+airflow/logs/
+airflow/airflow.db
+airflow_venv/
+*.parquet

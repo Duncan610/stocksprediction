@@ -61,3 +61,7 @@ structure.txt   # Ignores your tree output file
 # IDE-specific (optional, uncomment if you use these)
 #.idea/     # PyCharm
 #.vscode/   # VS Code
+# Airflow
+airflow/logs/
+airflow.db
+airflow_venv/
