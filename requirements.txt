@@ -9,4 +9,4 @@ lightgbm
 statsmodels
 xgboost
 python-dotenv
-apache-airflow==2.9.0
+apache-airflow==3.0.1
