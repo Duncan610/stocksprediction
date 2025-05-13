@@ -3,3 +3,7 @@ airflow/logs/
 airflow/airflow.db
 airflow_venv/
 *.parquet
+.git
+.env
+.vscode/
+__pyache__/
