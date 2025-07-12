@@ -53,14 +53,11 @@ venv.bak/
 data/           # Covers raw/, processed/, models/
 *.parquet       # Catches stray parquet files
 *.pkl           # Catches stray pickle files
-structure.txt   # Ignores your tree output file
+structure.txt   # Ignores the tree output file
 
 # Logs and temporary files
 *.log
 
-# IDE-specific (optional, uncomment if you use these)
-#.idea/     # PyCharm
-#.vscode/   # VS Code
 # Airflow
 airflow/logs/
 airflow.db
